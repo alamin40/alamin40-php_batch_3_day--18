@@ -4,6 +4,7 @@ require_once 'vendor/autoload.php';
 use App\classes\Home;
 use App\classes\Prime;
 use App\classes\Series;
+use App\classes\Register;
 
 
 if (isset($_GET['pages']))
@@ -16,7 +17,13 @@ if (isset($_GET['pages']))
     {
         include 'pages/series.php';
     }
+    elseif ($_GET['pages'] == 'register')
+    {
+        include 'pages/register.php';
+    }
 }
+
+
 
 elseif (isset($_POST['btn']))
 {
@@ -34,6 +41,16 @@ elseif (isset($_POST['series_btn']))
     include 'pages/series.php';
 
 
+}
+elseif (isset($_POST['register_btn'])){
+
+    $register = new Register($_POST);
+
+}
+else
+{
+    $home = new Home();
+    $home->index();
 }
 
 

@@ -7,11 +7,13 @@
                 <div class="card">
                     <div class="card-header">Prime Number</div>
                     <div class="card-body">
+                        <h6> <?php session_start(); echo $_SESSION['name']; ?> </h6>
+
                         <form action="action.php" method="post">
                             <div class="form-group row">
                                 <label class="col-md-3">Enter Number</label>
                                 <div class="col-md-9">
-                                    <input type="number" class="form-control" name="given_number" />
+                                    <input type="number" required class="form-control" name="given_number" />
                                 </div>
                             </div>
 

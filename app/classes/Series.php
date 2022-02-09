@@ -26,7 +26,11 @@ class Series
             $this->sum += $this->i;
         }
 
-        return rtrim($this->result, '+'). ' = '. $this->sum;
+        return [
+          'result' => rtrim($this->result, '+'). ' = '. $this->sum,
+          'starting_number' => $this->startingNumber,
+          'ending_number' => $this->endingNumber,
+        ];
     }
 
 }
